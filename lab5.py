@@ -1,4 +1,10 @@
 class TimeConverter:
+    def __init__(self):
+        pass
+
+    def __del__(self):
+        pass 
+        
     @staticmethod
     def time_to_seconds(time_str):
         hours, minutes, seconds = map(int, time_str.split(":"))
