@@ -1,9 +1,28 @@
 class TimeConverter:
-    def __init__(self):
-        pass
+     def __init__(self, seconds=0):
+        self._seconds = 0
+        self.seconds = seconds
 
     def __del__(self):
-        pass 
+        print("Об'єкт TimeConverter знищується")
+
+    @property
+    def seconds(self):
+        return self._seconds
+
+    @seconds.setter
+    def seconds(self, value):
+        if not isinstance(value, int) or value < 0:
+            raise ValueError("Кількість секунд має бути невід'ємним цілим числом")
+        self._seconds = value
+
+    @property
+    def time(self):
+        return TimeConverter.seconds_to_time(self._seconds)
+
+    @time.setter
+    def time(self, time_str):
+        self._seconds = TimeConverter.time_to_seconds(time_str)
         
     @staticmethod
     def time_to_seconds(time_str):
