@@ -31,6 +31,8 @@ class TimeConverter:
             raise TypeError("Expected a string, one number or three numbers")
 
 
-TimeConverter.output_converted_time("01:30:45")
-TimeConverter.output_converted_time(5445)
-TimeConverter.output_converted_time(23, 59, 59)
+if __name__ == "__main__":
+    TimeConverter.output_converted_time("01:30:45")
+    TimeConverter.output_converted_time(5445)
+    TimeConverter.output_converted_time(23, 59, 59)
+    
